@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SOURCE_FOLDER="/home/alireza/Documents/notes/"
+SOURCE_FOLDER="/home/alireza/Documents/notes/Notes_Obsidian/"
 ANDROID_USER="alireza"
 ANDROID_IP="192.168.0.31"
 ANDROID_FOLDER="/"
