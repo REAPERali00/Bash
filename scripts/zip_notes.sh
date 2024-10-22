@@ -1,5 +1,8 @@
 #!/bin/bash
 
-zip -r notes.zip ~/Documents/notes/Notes_Obsidian/
+cd ~/Documents/notes
+zip -r notes.zip ./Notes_Obsidian
 
 mv notes.zip ~/
+
+cd
