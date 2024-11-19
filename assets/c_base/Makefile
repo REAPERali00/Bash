@@ -1,7 +1,7 @@
 CC= gcc
 GCC = -Wall -g 
 
-TARGET = http
+TARGET = program
 SRCDIR = src
 OBJDIR= obj
 SOURCES = $(wildcard $(SRCDIR)/*.c)

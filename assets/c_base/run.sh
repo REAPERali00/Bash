@@ -3,5 +3,5 @@ make
 clear
 
 if [ $? -eq 0 ]; then
-  ./http &>output.txt
+  ./program &>output.txt
 fi
