@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# TODO: Read tags
-# TODO: if empty play from last, if none exist do help message
-# TODO: Save the video path and current playing in a text file at user directory (or local? )
-
 savedFile="$HOME/.local/lastplayed.txt"
 currentVideo=""
 queuefile="$HOME/.local/vid_queue.txt"
