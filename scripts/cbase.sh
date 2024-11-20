@@ -1,3 +1,3 @@
 #!/bin/bash
 
-cp -r /home/alireza/Documents/Bash/assets/c_base $1
+cp -r /home/alireza/Documents/bash_practice/assets/c_base $1
