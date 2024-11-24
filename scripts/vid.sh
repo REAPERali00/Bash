@@ -106,7 +106,7 @@ function play() {
     exit 1
   fi
 
-  vlc "$currentVideo"
+  vlc --play-and-exit --fullscreen "$currentVideo"
 }
 
 menu $@
