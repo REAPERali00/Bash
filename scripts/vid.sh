@@ -8,6 +8,7 @@ path=""
 function usage() {
   echo " Usage: $0 [-p]"
   echo "   -p change the directory path"
+  echo "   -c clear the cached queue"
   echo "  default will play videos in vid_queue "
 }
 function loop() {
@@ -24,12 +25,13 @@ function menu() {
     loop
     return
   fi
-  while getopts "p:" opt; do
+  while getopts "p:c" opt; do
     case $opt in
     p)
       path="$OPTARG"
       save "$path"
       ;;
+    c) clean ;;
     ?)
       echo "Invalid option: -$OPTARG"
       usage
@@ -107,6 +109,18 @@ function play() {
   fi
 
   vlc --play-and-exit --fullscreen "$currentVideo"
+}
+
+function clean() {
+  if [[ -f "$queuefile" ]]; then
+    echo "Deleted $queuefile"
+    rm -rf "$queuefile"
+  fi
+
+  if [[ -f "$savedFile" ]]; then
+    echo "Deleted $savedFile"
+    rm -rf "$savedFile"
+  fi
 }
 
 menu $@
