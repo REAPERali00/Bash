@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Backup Arch Linux Hyprland Environment
@@ -13,15 +12,15 @@ echo "Starting backup process..."
 
 # 1. Backup Home Configuration Files
 rsync -a --progress ~/.config $BACKUP_DIR/
-rsync -a --progress ~/.local $BACKUP_DIR/
+rsync -a --progress --exclude=".local/share/Steam" ~/.local $BACKUP_DIR/
 rsync -a --progress ~/.bashrc ~/.zshrc ~/.profile $BACKUP_DIR/
 
 # 2. Backup System Configuration Files
 sudo rsync -a --progress /etc $BACKUP_DIR/system-etc/
 
 # 3. Backup Installed Packages List
-pacman -Qqe > $BACKUP_DIR/pkglist.txt
-yay -Qqe > $BACKUP_DIR/aurpkglist.txt
+pacman -Qqe >$BACKUP_DIR/pkglist.txt
+yay -Qqe >$BACKUP_DIR/aurpkglist.txt
 
 # 4. Backup Bootloader Configuration (if needed)
 sudo rsync -a --progress /boot $BACKUP_DIR/boot-backup/
