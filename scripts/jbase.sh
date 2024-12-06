@@ -5,4 +5,4 @@ if [ $# -lt 1 ]; then
   exit 1
 fi
 
-cp -r "/home/alireza/Documents/Bash/assets/c_base" $1
+cp -r "/home/alireza/Documents/Bash/assets/java_base" $1
