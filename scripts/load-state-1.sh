@@ -1,5 +1,6 @@
 #!/bin/bash
 
+close_wk.sh 1
 # Switch to the third workspace and launch kitty with btop
 hyprctl dispatch workspace 1
 
