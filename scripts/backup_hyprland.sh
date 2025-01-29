@@ -25,9 +25,6 @@ yay -Qqe >$BACKUP_DIR/aurpkglist.txt
 # 4. Backup Bootloader Configuration (if needed)
 sudo rsync -a --progress /boot $BACKUP_DIR/boot-backup/
 
-# 5. Backup Hyprland Sessions (if any scripts exist)
-rsync -a --progress ~/scripts $BACKUP_DIR/scripts/
-
 # 6. Backup Additional Important Directories (if needed)
 rsync -a --progress ~/.local/bin $BACKUP_DIR/local-bin-backup/
 

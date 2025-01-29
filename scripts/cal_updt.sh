@@ -12,3 +12,5 @@ for cal in $(find "$HOME/Downloads" -name "*.ics"); do
     rm -rf "$cal"
   fi
 done
+
+rm -rf "${file%.zip}"
