@@ -1,7 +1,10 @@
 #!/bin/bash
-make
+
+error="error.log"
+
+make 2>>"$error"
 clear
 
 if [ $? -eq 0 ]; then
-  ./program &>output.txt
+  ./program 2>>"$error"
 fi
