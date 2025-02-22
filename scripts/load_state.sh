@@ -1,20 +1,20 @@
 #!/bin/bash
 
-# Switch to the third workspace and launch kitty with btop
+# Switch to the third workspace and launch ghostty with btop
 hyprctl dispatch workspace 1
-# kitty btop & # Launch kitty with btop
-# kitty htop & # Launch kitty with btop
-# kitty cava & # Launch kitty with btop
-hyprctl dispatch exec "[workspace 1; float; size 48% 22%; move 25% 5%] kitty -e htop"
-hyprctl dispatch exec "[workspace 1; float; size 48% 51%; move 25% 28%] kitty -e btop"
-hyprctl dispatch exec "[workspace 1; float; size 87% 16%; move 7% 81%] kitty -e cava"
-hyprctl dispatch exec "[workspace 1; float; size 18.5% 15%; move 73.5% 63%;] kitty"
+# ghostty btop & # Launch ghostty with btop
+# ghostty htop & # Launch ghostty with btop
+# ghostty cava & # Launch ghostty with btop
+hyprctl dispatch exec "[workspace 1; float; size 48% 22%; move 25% 5%] ghostty -e htop"
+hyprctl dispatch exec "[workspace 1; float; size 48% 51%; move 25% 28%] ghostty -e btop"
+hyprctl dispatch exec "[workspace 1; float; size 87% 16%; move 7% 81%] ghostty -e cava"
+hyprctl dispatch exec "[workspace 1; float; size 18.5% 15%; move 73.5% 63%;] ghostty"
 sleep 4 # Give it time to launch
 
-# Switch to the first workspace and launch kitty with tmux, then restore tmux session using tmux-resurrect
+# Switch to the first workspace and launch ghostty with tmux, then restore tmux session using tmux-resurrect
 hyprctl dispatch workspace 2
-kitty -e tmux new-session -A -s main & # Launch kitty with tmux (auto-attach to the main session)
-sleep 2                                # Give it time to launch
+ghostty -e tmux new-session -A -s main & # Launch ghostty with tmux (auto-attach to the main session)
+sleep 2                                  # Give it time to launch
 
 # Automatically restore tmux session
 tmux run-shell ~/.tmux/plugins/tmux-resurrect/scripts/restore.sh
@@ -40,5 +40,5 @@ hyprctl dispatch togglespecialworkspace
 
 # Switch to 4th workspace and open yazi
 hyprctl dispatch workspace 4
-kitty yazi &
+ghostty yazi &
 sleep 2 # Give it time to launch
