@@ -24,7 +24,8 @@ if [ ! -f "$daily" ]; then
     ' "$prev_daily")
 
     # Remove completed tasks (- [x]) and preserve the rest
-    cleaned_tasks=$(echo "$tasks_section" | grep -Ev '^\s+- \[x\]')
+    cleaned_tasks=$(echo "$tasks_section" | grep -Ev '^\s*- \[x\]')
+    echo "$cleaned_tasks"
 
     # Ensure tasks are inserted into the right location under the ## Tasks section
     if [ -n "$cleaned_tasks" ]; then
